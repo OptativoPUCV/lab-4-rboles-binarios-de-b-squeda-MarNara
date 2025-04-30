@@ -110,7 +110,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         removeNode(tree, nodoMenor);
 
     }
-    free(node);
+    
 
 }
 
