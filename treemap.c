@@ -60,8 +60,15 @@ TreeNode * minimum(TreeNode * x){
     //return NULL;
 }
 
-
+/*5.- Implemente la función void removeNode(TreeMap * tree, TreeNode* node). Esta función elimina el nodo *node* del árbol 
+*tree*. Recuerde que para eliminar un node existen 3 casos:
+**Nodo sin hijos:** Se anula el puntero del padre que apuntaba al nodo
+**Nodo con un hijo:** El padre del nodo pasa a ser padre de su hijo
+**Nodo con dos hijos:** Descienda al hijo derecho y obtenga el menor nodo del subárbol 
+(con la función minimum). Reemplace los datos (key,value) de *node* con los del nodo "minimum". 
+Elimine el nodo minimum (para hacerlo puede usar la misma función *removeNode*).*/
 void removeNode(TreeMap * tree, TreeNode* node) {
+    //nodo sin hijos, primero debo preguntar si estan.
 
 }
 
@@ -78,6 +85,27 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
+    //necesito el nodo de la raiz arbol
+    TreeNode* node = tree->root;
+
+    //mientras el nodo exista;
+    while(node != NULL){
+        //si es menor la clave a la clave actual, como no mtengo key debo usar pair, ya que pair tiene key y value
+        if(tree->lower_than(key, node->pair->key)){
+            node = node->left;
+        }
+        //ahora en el caso de que sea mayor
+        else if(tree->lower_than(node->pair->key, key)){
+            node = node->right;
+        }
+        //cuando son iguales
+        else{
+            
+
+        }
+
+
+    }
 
     //int resultado = map->lower_than(key1,key2);
 
