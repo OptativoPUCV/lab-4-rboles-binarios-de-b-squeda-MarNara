@@ -81,7 +81,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
         
 
-        free(node);
+       // free(node);
     }
     else if(node->left == NULL || node->right == NULL){
         //necesito el nodo hijo, ya que tiene uno, puede ser izquierdo o derecho
@@ -91,6 +91,10 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
         else{
             nino = node->right;
+        }
+        //falta actualizar el padre
+        if(nino != NULL){
+            nino->parent = node->parent;
         }
     }
     else{
