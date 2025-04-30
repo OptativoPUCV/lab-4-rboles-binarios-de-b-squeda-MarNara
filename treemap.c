@@ -68,6 +68,9 @@ TreeNode * minimum(TreeNode * x){
 (con la función minimum). Reemplace los datos (key,value) de *node* con los del nodo "minimum". 
 Elimine el nodo minimum (para hacerlo puede usar la misma función *removeNode*).*/
 void removeNode(TreeMap * tree, TreeNode* node) {
+    if(node == NULL){
+        return;
+    }
     //nodo sin hijos, primero debo preguntar si no estan y que hacer en cada caso.
     if(node->left == NULL && node->right == NULL){
         if(node->parent == NULL){
@@ -81,7 +84,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
         
 
-       // free(node);
+        free(node);
     }
     else if(node->left == NULL || node->right == NULL){
         //necesito el nodo hijo, ya que tiene uno, puede ser izquierdo o derecho
@@ -107,6 +110,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         removeNode(tree, nodoMenor);
 
     }
+    free(node);
 
 }
 
