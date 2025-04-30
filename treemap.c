@@ -96,9 +96,9 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             nino = node->parent->right;;
         }
         //falta actualizar el padre
-        if(nino != NULL){
-            nino->parent = node->parent;
-        }
+        
+        nino->parent = node->parent;
+        
         free(node);
         return;
     }
