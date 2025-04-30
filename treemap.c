@@ -79,8 +79,29 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         else{
             node->parent->right = NULL;
         }
+        
 
         //free(node);
+    }
+    else if(node->left == NULL || node->right == NULL){
+        //necesito el nodo hijo, ya que tiene uno, puede ser izquierdo o derecho
+        TreeNode* nino;
+        if(node->left != NULL){
+            nino = node->left;
+        }
+        else{
+            nino = node->right;
+        }
+    }
+    else{
+        /*como debo usar la funcion minimum es decir el menor de los mayores sera reemplazado como el el proximo nodo
+        que estaba en esa posicion cambiando las claves por las del dato que acabo de elegir para que lo reemplace */
+        TreeNode* nodoMenor = minimum(node->right);
+        node->pair->key = nodoMenor->pair->key;
+        node->pair->value = nodoMenor->pair->value;
+        //eliminar el nodo como en la tarea en casa
+        removeNode(tree, nodoMenor);
+
     }
 
 }
