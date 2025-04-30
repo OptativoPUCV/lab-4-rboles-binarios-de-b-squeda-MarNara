@@ -100,7 +100,9 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
         }
         //cuando son iguales
         else{
-            
+            tree->current = node;
+            return node->pair;
+
 
         }
 
