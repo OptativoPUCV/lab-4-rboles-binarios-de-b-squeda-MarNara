@@ -77,10 +77,10 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             tree->root = NULL;//como tampoco hay raiz transformo el nodo en raiz.
         }
         else if(node->parent->left == node){
-            node->left = NULL;//para desconectar el nodo
+            node->parent->left = NULL;//para desconectar el nodo
         }
         else{
-            node->right = NULL;
+            node->parent->right = NULL;
         }
         
 
