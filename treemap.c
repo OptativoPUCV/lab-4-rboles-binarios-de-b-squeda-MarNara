@@ -90,11 +90,23 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         //necesito el nodo hijo, ya que tiene uno, puede ser izquierdo o derecho
         TreeNode* nino;
         if(node->parent->left != NULL){
-            nino = node->parent->left;
+            nino = node->left;
         }
         else{
-            nino = node->parent->right;;
+            nino = node->right;
         }
+        //evaluar
+
+        if(node->parent == NULL){
+            tree->root = nino;
+        }
+        else if(node->parent->left == node){
+            node->parent->left = nino;
+        }
+        else{
+            node->parent->right = nino;
+        }
+
         //falta actualizar el padre
         
         nino->parent = node->parent;
