@@ -99,6 +99,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         if(nino != NULL){
             nino->parent = node->parent;
         }
+        return;
     }
     else{
         /*como debo usar la funcion minimum es decir el menor de los mayores sera reemplazado como el el proximo nodo
