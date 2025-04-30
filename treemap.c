@@ -52,9 +52,12 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 
 TreeNode * minimum(TreeNode * x){
     //hacer lo que hice en la tarea en casa pero en este caso solo buscamos el menor
-    
+    while(x && x->left){
+        x = x->left;
+    }
+    return x;
 
-    return NULL;
+    //return NULL;
 }
 
 
