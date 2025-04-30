@@ -51,6 +51,8 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 }
 
 TreeNode * minimum(TreeNode * x){
+    //hacer lo que hice en la tarea en casa pero en este caso solo buscamos el menor
+    
 
     return NULL;
 }
@@ -73,6 +75,9 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
+
+    //int resultado = map->lower_than(key1,key2);
+
     return NULL;
 }
 
