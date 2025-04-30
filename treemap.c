@@ -71,17 +71,17 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     //nodo sin hijos, primero debo preguntar si no estan y que hacer en cada caso.
     if(node->left == NULL && node->right == NULL){
         if(node->parent == NULL){
-            tree->root = node;//como tampoco hay raiz transformo el nodo en raiz.
+            tree->root->left = node;//como tampoco hay raiz transformo el nodo en raiz.
         }
         else if(node->parent->left == NULL){
-            node->left = NULL;//para desconectar el nodo
+           tree->root->right = NULL;//para desconectar el nodo
         }
         else{
             node->parent->right = NULL;
         }
         
 
-        //free(node);
+        free(node);
     }
     else if(node->left == NULL || node->right == NULL){
         //necesito el nodo hijo, ya que tiene uno, puede ser izquierdo o derecho
