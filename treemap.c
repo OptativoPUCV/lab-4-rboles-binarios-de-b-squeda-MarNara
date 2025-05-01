@@ -64,6 +64,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 
     //recorrer el arbol
     while(currentParaInsertar != NULL){
+        padreDeInsertar = currentParaInsertar;
         if(tree->lower_than(key, currentParaInsertar->pair->key)){//(1 si key1<key2 y 0 si no)
             currentParaInsertar = currentParaInsertar->left;
         }
@@ -73,7 +74,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 
     }
 
-    padreDeInsertar = currentParaInsertar;
+    nodoAinsertar->parent  = padreDeInsertar;
     
     
 }
