@@ -85,7 +85,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         padreDeInsertar->left = nodoAinsertar;
     }
 
-    currentParaInsertar = tree->current;
+    tree->current = nodoAinsertar;
 
     
 }
