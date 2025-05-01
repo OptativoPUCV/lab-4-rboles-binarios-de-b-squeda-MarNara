@@ -172,3 +172,23 @@ test.c:6:8: warning: '_strdup' redeclared without dllimport attribute: previous 
     6 | char * _strdup(const char * str) {
       |        ^~~~~~~
 3fed812
+ju.,  1 de may. de 2025 16:28:45: 
+ treemap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function 'insertTreeMap':
+treemap.c:58:26: error: initialization of 'TreeNode *' from incompatible pointer type 'Pair *' [-Wincompatible-pointer-types]
+   58 |     TreeNode* nodoEsta = searchTreeMap(tree, key);
+      |                          ^~~~~~~~~~~~~
+treemap.c:63:15: warning: variable 'padreDeInsertar' set but not used [-Wunused-but-set-variable]
+   63 |     TreeNode* padreDeInsertar = NULL;
+      |               ^~~~~~~~~~~~~~~
+treemap.c:61:15: warning: unused variable 'nodoAinsertar' [-Wunused-variable]
+   61 |     TreeNode* nodoAinsertar = createTreeNode(key, value);
+      |               ^~~~~~~~~~~~~
+test.c: At top level:
+test.c:6:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    6 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+1e41993

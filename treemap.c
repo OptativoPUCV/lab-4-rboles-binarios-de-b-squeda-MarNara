@@ -55,7 +55,7 @@ Luego crear el nuevo nodo y enlazarlo. Si la clave del dato ya existe retorne si
    */
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
     //usar search
-    TreeMap* nodoEsta = searchTreeMap(tree, key);
+    TreeNode* nodoEsta = searchTreeMap(tree, key);
     if(nodoEsta != NULL) return;//Si la clave del dato ya existe retorne sin hacer nada
     //crear el nodo para que voy a insertar
     TreeNode* nodoAinsertar = createTreeNode(key, value);
@@ -65,10 +65,10 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     //recorrer el arbol
     while(currentParaInsertar != NULL){
         if(tree->lower_than(key, currentParaInsertar->pair->key)){//(1 si key1<key2 y 0 si no)
-            nodoAinsertar = currentParaInsertar->left;
+            currentParaInsertar = currentParaInsertar->left;
         }
         else{
-            nodoAinsertar = currentParaInsertar->right;
+            currentParaInsertar = currentParaInsertar->right;
         }
 
     }
