@@ -221,9 +221,9 @@ Pair * nextTreeMap(TreeMap * tree) {
     //crear nodo
     TreeNode* nodoActual = tree->current;
     if(nodoActual->right != NULL){
-        return minimum(nodoActual->right);
-        tree->current = nodoActual;
-        return nodoActual->pair;
+        TreeNode* menorMayor =  minimum(nodoActual->right);
+        tree->current = menorMayor;
+        return menorMayor->pair;
     }
     else{
         TreeNode* temporal = tree->current;
