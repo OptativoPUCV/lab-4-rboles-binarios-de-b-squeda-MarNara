@@ -218,7 +218,10 @@ Pair * firstTreeMap(TreeMap * tree) {
     if(nodoActual != NULL){
         return nodoActual->pair;
     }
-    return NULL;
+    else{
+        return NULL;
+    }
+    
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
