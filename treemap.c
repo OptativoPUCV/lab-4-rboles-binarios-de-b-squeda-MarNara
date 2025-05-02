@@ -227,7 +227,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         while(temporal->parent != NULL && temporal->parent->right == temporal){
             temporal = temporal->parent;
         }
-        return temporal->parent;
+        tree->current = temporal->parent;
     }
     return NULL;
 }
