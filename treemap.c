@@ -219,15 +219,17 @@ Pair * firstTreeMap(TreeMap * tree) {
 
 Pair * nextTreeMap(TreeMap * tree) {
     //crear nodo
-    if(tree->current->right != NULL){
-        return minimum(tree->current->right);
+    TreeNode* nodoActual = tree->current;
+    if(nodoActual->right != NULL){
+        return minimum(nodoActual->right);
     }
     else{
         TreeNode* temporal = tree->current;
         while(temporal->parent != NULL && temporal->parent->right == temporal){
             temporal = temporal->parent;
         }
-        tree->current = temporal->parent;
+        temporal = temporal->parent;
     }
+    tree->current = nodoActual;
     return NULL;
 }
