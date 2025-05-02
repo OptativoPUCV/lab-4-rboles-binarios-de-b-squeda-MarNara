@@ -231,13 +231,14 @@ Pair * nextTreeMap(TreeMap * tree) {
             temporal = temporal->parent;
         }
         tree->current = temporal->parent;
+        
+        if(tree->current != NULL){
+            return tree->current->pair;
+        }
+        else{
+            return NULL;
+        }
     }
-    tree->current = nodoActual;
-    if(nodoActual != NULL){
-        return nodoActual->pair;
-    }
-    else{
-        return NULL;
-    }
+    
     
 }
