@@ -57,7 +57,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     //usar search
     Pair* nodoEsta = searchTreeMap(tree, key);
     if(nodoEsta != NULL) return;//Si la clave del dato ya existe retorne sin hacer nada
-    //crear el nodo para que voy a insertar
+    //crear el nodo que voy a insertar
     TreeNode* nodoAinsertar = createTreeNode(key, value);//nodo hijo
     TreeNode* currentParaInsertar = tree->root; //para recorrer desde el inicio (es el nodo actual)
     TreeNode* padreDeInsertar = NULL;// nodo padre
@@ -218,5 +218,16 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
+    //crear nodo
+    if(tree->current->right != NULL){
+        return minimum(tree->current->right);
+    }
+    else{
+        TreeNode* temporal = tree->current;
+        while(temporal->parent != NULL && temporal->parent->right == temporal){
+            temporal = temporal->parent;
+        }
+        return temporal->parent;
+    }
     return NULL;
 }
