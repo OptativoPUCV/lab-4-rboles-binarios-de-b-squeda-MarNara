@@ -214,6 +214,10 @@ Pair * upperBound(TreeMap * tree, void* key) {
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
+    TreeNode* nodoActual = tree->root;
+    if(nodoActual != NULL){
+        return nodoActual->pair;
+    }
     return NULL;
 }
 
