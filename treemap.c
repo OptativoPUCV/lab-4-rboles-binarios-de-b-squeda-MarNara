@@ -214,11 +214,11 @@ Pair * upperBound(TreeMap * tree, void* key) {
     Pair* resultado = NULL;
 
     while(temp != NULL){
-        if(temp < temp->key){
+        if(key < temp->key){
             resultado = temp;
             temp = tree->root->left;
         }
-        else if(temp > temp->key){
+        else if(key > temp->key){
             temp = tree->root->right;
         }
         else{
