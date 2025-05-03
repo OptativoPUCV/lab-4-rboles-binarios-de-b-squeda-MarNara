@@ -229,8 +229,11 @@ Pair * upperBound(TreeMap * tree, void* key) {
         }
 
     }
+    /*evaluar bien el return resultado  y el null, ya que el resultado es un puntero al nodo y si no habia 
+    key que cumpliera las condiciones resultado se queda como NULL, en ese caso para no generar error en el codigo cuando debo
+    retornar a resultado como pair primero debo preguntar por ese caso y luego hacer el resultado->pair*/
     if(resultado != NULL){
-        return resultado->pair;
+        return result;
     }
     else{
         return NULL;
