@@ -210,6 +210,22 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
+    Pair* temp = tree->root;
+    Pair* resultado = NULL;
+
+    while(temp != NULL){
+        if(temp < temp->key){
+            resultado = temp;
+            temp = tree->root->left;
+        }
+        else if(temp > temp->key){
+            temp = tree->root->right;
+        }
+        else{
+            return temp;
+        }
+
+    }
     return NULL;
 }
 
